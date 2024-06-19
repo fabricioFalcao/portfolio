@@ -8,10 +8,27 @@
 </head>
 
 <body>
-    <h1>{{ profile.name }}</h1>
+    <h1>{{ profile.name }}'s profile:</h1>
+    <p><strong>Name:</strong> {{ profile.name }}</p>
     <p><strong>GitHub:</strong> <a href="{{ profile.github }}">{{ profile.github }}</a></p>
     <p><strong>LinkedIn:</strong> <a href="{{ profile.linkedin }}">{{ profile.linkedin }}</a></p>
     <p><strong>Bio:</strong> {{ profile.bio }}</p>
+
+    <h2>Projects:</h2>
+    {% for project in projects %}
+    <p>{{ project.name }}</p>
+    <p>{{ project.description }}</p>
+    <p>{{ project.github_url }}</p>
+    <p>{{ project.keyword }}</p>
+    <p>{{ project.key_skill }}</p>
+    <p>{{ project.profile }}</p>
+    {% endfor %}
+
+    <h2>Certificates:</h2>
+    {% for certificates in certificates %}
+    <p>{{ certificates.name }}</p>
+    <p>{{ certificates.certifying_institution.name }}</p>
+    {% endfor %}
 </body>
 
 </html>

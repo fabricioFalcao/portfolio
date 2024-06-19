@@ -23,6 +23,8 @@ class ProfileViewSet(viewsets.ModelViewSet):
                 'profile_detail.html',
                 {
                     'profile': profile,
+                    'projects': profile.projects.all(),
+                    'certificates': profile.certificates.all(),
                 }
             )
         return super().retrieve(request, *args, **kwargs)
